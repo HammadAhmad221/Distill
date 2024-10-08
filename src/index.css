@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-outline-purpule {
+    -webkit-text-stroke: 0.5px #BCBCFF;
+    color: transparent;
+  }
+}
+
+@layer utilities {
+  .text-outline-orange {
+    -webkit-text-stroke: 0.5px #FFC6C6;
+    color: transparent;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+      max-width: 1380px;
+  }
+}
