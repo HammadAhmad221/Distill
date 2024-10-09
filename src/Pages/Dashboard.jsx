@@ -100,7 +100,7 @@ const App = () => {
       <img src="/close.svg" alt="x" />
 
     </div>
-    <div className="flex items-center justify-end">
+    <div className="flex items-center justify-end gap-4">
       <button className="bg-gray-200 text-[#667091] border border-[#e2e2fd] px-4 py-2 rounded-lg">Cancel</button>
       <button onClick={()=>navigate('/results')} className="bg-[#3F3EED] text-white px-4 py-2 rounded-lg flex items-center gap-2"><img src="/magic.svg" alt="m" />
         Generate</button>
