@@ -8,26 +8,24 @@ const FileUpload = () => {
   };
 
   return (
-    <div className="p-6 bg-white shadow-md rounded-lg">
+    <div className="">
       <h2 className="text-xl font-semibold mb-4">Add new files</h2>
       <div className="border-2 border-dashed border-gray-300 p-6 rounded-lg mb-4 text-center">
         <input type="file" onChange={handleFileChange} className="hidden" id="fileUpload" />
         <label htmlFor="fileUpload" className="cursor-pointer">
-          {file ? <span>{file.name}</span> : <span>Drag & Drop or Choose file to upload</span>}
-        </label>
-      </div>
-
-      <div className="flex justify-between items-center">
-        <select className="border rounded-lg px-4 py-2">
-          <option>Automatic language detection</option>
-        </select>
-
-        {file && (
-          <div className="flex items-center space-x-4">
-            <button className="bg-gray-200 px-4 py-2 rounded-lg">Cancel</button>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">Generate</button>
+          {file ? <span>{file.name}</span> : 
+          // <div className='font-semibold'>Drag & Drop or Choose file to upload</div>
+          <div className="flex-col justify-start items-center gap-4 flex p-4">
+            <img src="/PaperUpload.svg" alt="UP" />
+          <div className="text-[#11142d] text-sm font-bold">
+            Drag & Drop or choose file to upload
           </div>
-        )}
+          <div className="text-[#557593] text-sm font-normal">
+            Select zip, image, pdf, or ms.word
+          </div>
+        </div>
+          }
+        </label>
       </div>
     </div>
   );

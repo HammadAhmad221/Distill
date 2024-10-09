@@ -54,10 +54,10 @@ const ChatSidebar = ({ chats, onSelectChat, onNewChat, onDeleteChat }) => {
         </button>
       </div>
       {/* User Section */}
-      <div className="p-4 flex items-center space-x-4 ">
+      <div className="p-4 flex items-center space-x-4 rounded-md border-2 border-[#e5e4ff] bg-[#dbdbff] w-[80%] mx-auto">
         <FaUserCircle className="text-4xl" />
         <div>
-          <h2 className="font-semibold">Mack Gok</h2>
+          <h2 className="font-semibold">Mack Gok <span className='bg-[]'>Free</span></h2>
           <p className="text-sm">openup@mail.com</p>
         </div>
       </div>
