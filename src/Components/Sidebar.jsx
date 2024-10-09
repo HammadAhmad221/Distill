@@ -3,9 +3,7 @@ import { FaTrash,FaEllipsisH, FaComments, FaUserCircle, FaCog, FaHome, FaSignOut
 
 const ChatSidebar = ({ chats, onSelectChat, onNewChat, onDeleteChat }) => {
   return (
-    <aside className="w-64 flex flex-col border-r border-[#e5e4ff]">
-
-
+    <aside className="w-96 flex flex-col border-r border-[#e5e4ff] max-[500px]:hidden">
       {/* Navigation Links */}
       <nav className="p-4 space-y-4">
         <div className="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 p-2 rounded-md bg-[#f7f7ff] border border-[#e5e4ff]">
@@ -47,20 +45,27 @@ const ChatSidebar = ({ chats, onSelectChat, onNewChat, onDeleteChat }) => {
 
 
       {/* Logout Button */}
-      <div className="p-4 ">
+      <div className="p-2 ">
         <button className="flex items-center space-x-2 w-full p-2 rounded-md hover:bg-gray-700">
           <FaSignOutAlt className="text-lg" />
           <span>Logout</span>
         </button>
       </div>
       {/* User Section */}
-      <div className="p-4 flex items-center space-x-4 rounded-md border-2 border-[#e5e4ff] bg-[#dbdbff] w-[80%] mx-auto">
+<div className='p-4 flex flex-col items-center rounded-md border border-[#e5e4ff] bg-[#dbdbff] w-[85%] mx-auto gap-4'>
+<div className="flex gap-4">
         <FaUserCircle className="text-4xl" />
         <div>
-          <h2 className="font-semibold">Mack Gok <span className='bg-[]'>Free</span></h2>
+          <h2 className="font-semibold">Mack Gok &nbsp;<span className='bg-[#3F3EED] text-white font-space font-semibold rounded-lg p-1'>Free</span></h2>
           <p className="text-sm">openup@mail.com</p>
         </div>
       </div>
+        <div className="flex items-center cursor-pointer hover:bg-gray-100 p-2 rounded-md bg-[#f7f7ff] border border-[#e5e4ff] gap-2">
+          {/* <FaHome className="text-lg" /> */}
+          <img src="/crownblue.svg" alt="c" />
+          <span className='text-[#3f3eed] font-space'>Upgrade to Pro</span>
+          </div>
+</div>
     </aside>
   );
 };

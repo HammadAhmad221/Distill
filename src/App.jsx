@@ -36,25 +36,29 @@ import Footer from './Components/Footer';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Dashboard from './Pages/Dashboard';
+import Results from './Pages/Results';
 
 function App() {
   const location = useLocation(); // Now this will work properly within the Router context
   const isDashboardPage = location.pathname === '/dashboard'; // Check if the current route is the dashboard
+  const isResultsPage = location.pathname === '/results'; // Check if the current route is the dashboard
+
+
 
   return (
     <>
       {/* Conditionally render the header */}
-      {!isDashboardPage && <Header />}
+      {(!isDashboardPage && !isResultsPage) && <Header />}
       
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
-      
       {/* Conditionally render the footer */}
-      {!isDashboardPage && <Footer />}
+      {(!isDashboardPage && !isResultsPage) && <Footer />}
     </>
   );
 }
