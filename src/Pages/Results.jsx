@@ -238,7 +238,7 @@ const handleDropdownToggle = (section) => {
 
               {/* Headings Dropdown */}
               <div 
-                className='bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6 cursor-pointer mt-4 px-6' 
+                className='bg-gray-100 rounded-lg flex items-center justify-between py-2 cursor-pointer mt-4 px-6' 
                 onClick={() => handleDropdownToggle('headings')}
               >
                 <div className="text-[#3f3eed] text-base font-semibold">Headings</div>
@@ -258,7 +258,7 @@ const handleDropdownToggle = (section) => {
 
               {/* Key Points Dropdown */}
               <div 
-                className='bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6 cursor-pointer mt-4 px-6' 
+                className='bg-gray-100 rounded-lg flex items-center justify-between py-2 cursor-pointer mt-4 px-6' 
                 onClick={() => handleDropdownToggle('keyPoints')}
               >
                 <div className="text-[#3f3eed] text-base font-semibold">Key points</div>
@@ -278,7 +278,7 @@ const handleDropdownToggle = (section) => {
 
               {/* Notes Dropdown */}
               <div 
-                className='bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6 cursor-pointer mt-4 px-6' 
+                className='bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6 cursor-pointer mt-4 ' 
                 onClick={() => handleDropdownToggle('notes')}
               >
                 <div className="text-[#3f3eed] text-base font-semibold">Notes</div>
