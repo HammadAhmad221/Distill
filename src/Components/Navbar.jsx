@@ -1,54 +1,20 @@
-// import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSearch, faBell, faGlobe, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+// import React from 'react'
 
-// const Nav = () => {
+// const Navbar = () => {
 //   return (
-//     <header className="border-b border-[#e5e4ff] p-4 flex justify-between items-center w-[100vw]">
-//       {/* Logo Section */}
-//       <div className="w-8 h-8 flex items-center gap-2">
-//         <img src="/Clip.svg" alt="Distill Audio Logo" />
-//         <div className="text-sm font-bold whitespace-nowrap">Distill Audio</div>
-//       </div>
+//     <div>Navbar</div>
+//   )
+// }
 
-//       {/* Buttons and Icons */}
-//       <div className="flex gap-6 items-center space-x-4">
-//         <button className="flex items-center gap-2 bg-[#3F3EED] px-4 py-2 rounded-lg text-white"><img src="/buttoncrown.svg" alt="c" />Update</button>
+// export default Navbar
 
-//         {/* Icons Section */}
-//         <div className="flex gap-3 items-center space-x-4">
-//           {/* Search Icon */}
-//           <button>
-//             <FontAwesomeIcon icon={faSearch} className="text-gray-600 text-2xl" />
-//           </button>
 
-//           {/* Notifications Icon */}
-//           <button>
-//             <FontAwesomeIcon icon={faBell} className="text-gray-600 text-2xl" />
-//           </button>
-
-//           {/* Language Icon */}
-//           <button>
-//             <FontAwesomeIcon icon={faGlobe} className="text-gray-600 text-2xl" />
-//           </button>
-
-//           {/* Profile Icon */}
-//           <button>
-//             <FontAwesomeIcon icon={faUserCircle} className="text-gray-600 text-2xl" />
-//           </button>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Nav;
 
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBell, faGlobe, faUserCircle, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const Nav = () => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -123,4 +89,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navbar;

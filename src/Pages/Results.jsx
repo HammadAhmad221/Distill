@@ -90,7 +90,7 @@
 
 import React, { useState } from 'react';
 import Sidebar from '../Components/Sidebar';
-import Navbar from '../Components/navbar';
+import Navbar from '../Components/Navbar';
 import AudioPlayer from '../Components/AudioPlayer';
 
 const Results = () => {

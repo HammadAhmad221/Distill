@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../Components/Sidebar';
-import Navbar from '../Components/navbar';
+import Navbar from '../Components/Navbar';
 import FileUpload from '../Components/FileUpload';
 import { useNavigate } from 'react-router-dom';
 
