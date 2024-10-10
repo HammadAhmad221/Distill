@@ -41,7 +41,7 @@ const SignupForm = () => {
 
   return (
     <div className="flex items-center justify-center w-full">
-      <div className="p-20 w-[50vw] max-[1000px]:w-[80vw]">
+      <div className="p-6 w-[50vw] max-[1000px]:w-[100vw]">
       <div className="text-center text-[#3f3eed] text-lg font-bold leading-snug">Start your Journey</div>
         <h2 className="text-3xl font-bold text-center mb-10">Signup to continue</h2>
         <form onSubmit={handleLogin}>
@@ -75,8 +75,8 @@ const SignupForm = () => {
             <label className="block text-[#11142d] text-sm font-bold mb-2">
               Password
             </label>
-<div className='relative'>
-<input
+          <div className='relative'>
+          <input
             //   type="password"
             type={showPassword ? 'text' : 'password'}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#3F3EED]"

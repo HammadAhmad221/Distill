@@ -6,7 +6,7 @@ import { faFacebook, faTwitter, faLinkedin, faInstagram } from '@fortawesome/fre
 const Footer = () => {
   return (
 <div className='font-space flex flex-col gap-24 justify-between bg-gray-100 pt-20'>
-<div className="bg-[url('/LandingPageBg.jpg')] h-[290px] w-[85%] rounded-md bg-cover bg-center mx-auto flex items-center justify-between p-16">
+<div className="bg-[url('/LandingPageBg.jpg')] h-[290px] w-[85%] rounded-md bg-cover bg-center mx-auto flex items-center justify-between p-16 max-[600px]:p-4">
 <div >
 <div className="text-white text-3xl font-bold w-[60%] max-[1000px]:w-full">Ready to Transform the Way You Learn from Videos </div>
 <button className="px-4 py-2 bg-[#3f3eed] rounded-[25px] justify-center items-center inline-flex text-white text-base font-medium mt-4">

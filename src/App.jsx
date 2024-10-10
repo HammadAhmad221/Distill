@@ -37,6 +37,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Dashboard from './Pages/Dashboard';
 import Results from './Pages/Results';
+import ComingSoon from './Pages/CommingSoon';
 
 function App() {
   const location = useLocation(); // Now this will work properly within the Router context
@@ -56,6 +57,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/results" element={<Results />} />
+        <Route path="/coming" element={<ComingSoon />} />
       </Routes>
       {/* Conditionally render the footer */}
       {(!isDashboardPage && !isResultsPage) && <Footer />}

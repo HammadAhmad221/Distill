@@ -5,17 +5,17 @@ const HeroSection = () => {
   return (
     <div className="h-[800px] bg-[url('/S1bg.jpg')] bg-cover bg-center flex flex-col gap-8 items-center justify-end text-white text-center relative">
     <div>
-      <div className="font-bold  text-6xl">Your Second Brain </div>
-      <div className="font-bold  text-6xl">
+      <div className="font-bold  text-6xl max-[600px]:text-3xl">Your Second Brain </div>
+      <div className="font-bold  text-6xl max-[600px]:text-3xl">
         For &nbsp;
-        <span className="text-[#3f3eed] text-6xl font-bold">Podcasts</span>
+        <span className="text-[#3f3eed] text-6xl max-[600px]:text-3xl font-bold">Podcasts</span>
       </div>
     </div>
     <div className="text-center text-[#e3e3e3] font-normal">
       Transcribe, Summarise, and Distill Knowledge from Every Audio or
       Podcast.
     </div>
-    <div className="flex gap-8 flex-wrap">
+    <div className="flex gap-8 flex-wrap max-[340px]:justify-center">
       <button className="py-2 px-8 bg-[#3f3eed] rounded-[25px] justify-center items-center">
         Get Started
       </button>

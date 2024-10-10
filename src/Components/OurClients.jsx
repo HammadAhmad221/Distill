@@ -2,7 +2,7 @@ import React from 'react'
 
 const OurClients = () => {
   return (
-    <div className="p-20 flex flex-col gap-10 items-center">
+    <div className="p-20 max-[600px]:p-4 flex flex-col gap-10 items-center">
     <div className="text-center text-[#083a5e] text-base font-medium">
       professionals & teams choose Distill Audio
     </div>
@@ -14,7 +14,7 @@ const OurClients = () => {
       <img src="/05.png" alt="" />
       <img src="/06.png" alt="" />
     </div>
-    <div className="text-center text-[#083a5e] text-5xl font-bold mt-10">
+    <div className="text-center text-[#083a5e] text-5xl max-[600px]:text-3xl font-bold mt-10">
       Unlock the Power of <br />
       Audio Content
     </div>

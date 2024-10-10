@@ -61,11 +61,11 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="gap-16 hidden md:flex max-[1000px]:gap-4">
-            <a href="#" className="hover:text-[#3F3EED]">Home</a>
-            <a href="#" className="hover:text-[#3F3EED]">Features</a>
-            <a href="#" className="hover:text-[#3F3EED]">About Us</a>
-            <a href="#" className="hover:text-[#3F3EED]">FAQ's</a>
-            <a href="#" className="hover:text-[#3F3EED]">Contact</a>
+            <a href="/" className="hover:text-[#3F3EED]">Home</a>
+            <a href="/coming" className="hover:text-[#3F3EED]">Features</a>
+            <a href="/coming" className="hover:text-[#3F3EED]">About Us</a>
+            <a href="/coming" className="hover:text-[#3F3EED]">FAQ's</a>
+            <a href="/coming" className="hover:text-[#3F3EED]">Contact</a>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -101,13 +101,13 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <nav className="md:hidden bg-[#151f39] py-4 px-4">
-            <a href="#" className="block py-2 hover:text-[#3F3EED]">Home</a>
-            <a href="#" className="block py-2 hover:text-[#3F3EED]">Features</a>
-            <a href="#" className="block py-2 hover:text-[#3F3EED]">About Us</a>
-            <a href="#" className="block py-2 hover:text-[#3F3EED]">FAQ's</a>
-            <a href="#" className="block py-2 hover:text-[#3F3EED]">Contact</a>
+            <a href="/" className="block py-2 hover:text-[#3F3EED]">Home</a>
+            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">Features</a>
+            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">About Us</a>
+            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">FAQ's</a>
+            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">Contact</a>
             <a href="/login" className="block py-2 hover:text-[#3F3EED]">Sign In</a>
-            <button className="bg-[#D9D9D90F] text-white w-full px-6 py-2 mt-2 rounded-full">
+            <button className="bg-[#D9D9D90F] text-white w-full px-6 py-2 mt-2 rounded-full" onClick={()=>{navigate('/dashboard')}}>
               Dashboard
             </button>
           </nav>

@@ -49,7 +49,7 @@ const AudioContentUnlock = () => {
   return (
     <div className="bg-gray-900 text-white p-32 max-[1000px]:p-4 text-center flex flex-col items-center gap-14">
 <div className='w-[33%] max-[1000px]:w-[80%]'>
-<h1 className="text-4xl font-bold mb-5 ">Unlock the Power of Audio Content</h1>
+<h1 className="text-4xl max-[600px]:text-3xl font-bold mb-5 ">Unlock the Power of Audio Content</h1>
 <p className="">Transform the way you interact with and extract knowledge from podcasts and audio files.</p>
 </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

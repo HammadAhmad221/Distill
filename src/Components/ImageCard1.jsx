@@ -26,9 +26,9 @@ const ImageCard1 = () => {
             01
           </div> */}
           {/* <div className="h-[127px] text-black text-[100px] font-bold">01</div> */}
-          <div className=" text-[#BCBCFF] text-[100px] font-bold text-outline-purpule">01</div>
+          <div className=" text-[#BCBCFF] text-[100px] max-[600px]:text-3xl font-bold text-outline-purpule">01</div>
           {/* Heading */}
-          <div className="text-[#083a5e] text-4xl font-bold leading-[44.28px]">
+          <div className="text-[#083a5e] text-4xl max-[600px]:text-3xl font-bold leading-[44.28px]">
             Upload Your Audio File / Video URL
           </div>
         </div>

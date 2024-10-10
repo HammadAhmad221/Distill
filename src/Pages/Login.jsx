@@ -41,7 +41,7 @@ const LoginForm = () => {
 
   return (
     <div className="flex items-center justify-center w-full">
-      <div className="p-20 w-[50vw] max-[1000px]:w-[80vw]">
+      <div className="p-6 w-[50vw] max-[1000px]:w-[100vw]">
       <div className="text-center text-[#3f3eed] text-lg font-bold leading-snug">Welcome Back</div>
         <h2 className="text-3xl font-bold text-center mb-10">Login to continue</h2>
         <form onSubmit={handleLogin}>

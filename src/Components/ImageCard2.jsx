@@ -10,9 +10,9 @@ const ImageCard1 = () => {
       <div className="flex flex-col gap-3.5">
         <div className="flex flex-col">
           {/* Number */}
-          <div className="text-[#FFC6C6] text-[100px] font-bold text-outline-orange">02</div>
+          <div className="text-[#FFC6C6] text-[100px] max-[600px]:text-3xl font-bold text-outline-orange">02</div>
           {/* Heading */}
-          <div className="text-[#083a5e] text-4xl font-bold leading-[44.28px]">
+          <div className="text-[#083a5e] text-4xl max-[600px]:text-3xl font-bold leading-[44.28px]">
           Transcription in Progress
           </div>
         </div>
