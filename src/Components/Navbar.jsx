@@ -8,11 +8,16 @@
 
 // export default Navbar
 
-
-
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faBell, faGlobe, faUserCircle, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSearch,
+  faBell,
+  faGlobe,
+  faUserCircle,
+  faBars,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,16 +44,25 @@ const Navbar = () => {
         {/* Icons Section */}
         <div className="flex gap-3 items-center space-x-4">
           <button>
-            <FontAwesomeIcon icon={faSearch} className="text-gray-600 text-2xl" />
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="text-gray-600 text-2xl"
+            />
           </button>
           <button>
             <FontAwesomeIcon icon={faBell} className="text-gray-600 text-2xl" />
           </button>
           <button>
-            <FontAwesomeIcon icon={faGlobe} className="text-gray-600 text-2xl" />
+            <FontAwesomeIcon
+              icon={faGlobe}
+              className="text-gray-600 text-2xl"
+            />
           </button>
           <button>
-            <FontAwesomeIcon icon={faUserCircle} className="text-gray-600 text-2xl" />
+            <FontAwesomeIcon
+              icon={faUserCircle}
+              className="text-gray-600 text-2xl"
+            />
           </button>
         </div>
       </div>
@@ -56,7 +70,10 @@ const Navbar = () => {
       {/* Hamburger Menu Icon for Small Screens */}
       <div className="flex md:hidden">
         <button onClick={toggleMenu}>
-          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} className="text-gray-600 text-2xl" />
+          <FontAwesomeIcon
+            icon={isMenuOpen ? faTimes : faBars}
+            className="text-gray-600 text-2xl"
+          />
         </button>
       </div>
 
@@ -68,7 +85,10 @@ const Navbar = () => {
             Update
           </button>
           <button className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faSearch} className="text-gray-600 text-2xl" />
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="text-gray-600 text-2xl"
+            />
             <span>Search</span>
           </button>
           <button className="flex items-center gap-2">
@@ -76,11 +96,17 @@ const Navbar = () => {
             <span>Notifications</span>
           </button>
           <button className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faGlobe} className="text-gray-600 text-2xl" />
+            <FontAwesomeIcon
+              icon={faGlobe}
+              className="text-gray-600 text-2xl"
+            />
             <span>Language</span>
           </button>
           <button className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faUserCircle} className="text-gray-600 text-2xl" />
+            <FontAwesomeIcon
+              icon={faUserCircle}
+              className="text-gray-600 text-2xl"
+            />
             <span>Profile</span>
           </button>
         </div>

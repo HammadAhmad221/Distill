@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -11,7 +11,7 @@ const ComingSoon = () => {
   // Countdown logic
   useEffect(() => {
     const countdown = () => {
-      const countDate = new Date('Dec 31, 2024 00:00:00').getTime();
+      const countDate = new Date("Dec 31, 2024 00:00:00").getTime();
       const now = new Date().getTime();
       const gap = countDate - now;
 
@@ -37,16 +37,19 @@ const ComingSoon = () => {
       <div className="text-center px-6">
         {/* Logo (Optional) */}
         <div className="w-full flex items-center justify-center gap-2">
-            <img src="/Clip.svg" alt="" className='w-20 h-20'/>
-            <div className="text-4xl font-bold whitespace-nowrap">
-              Distill Audio
-            </div>
+          <img src="/Clip.svg" alt="" className="w-20 h-20" />
+          <div className="text-4xl font-bold whitespace-nowrap">
+            Distill Audio
           </div>
+        </div>
 
         {/* Coming Soon Text */}
-        <h1 className="text-5xl font-bold mb-4 text-white">Exciting Features Coming Soon!</h1>
+        <h1 className="text-5xl font-bold mb-4 text-white">
+          Exciting Features Coming Soon!
+        </h1>
         <p className="text-lg text-gray-400 mb-6">
-          We're working hard to bring you the best experience. Stay tuned for upcoming features!
+          We're working hard to bring you the best experience. Stay tuned for
+          upcoming features!
         </p>
 
         {/* Countdown Timer */}

@@ -1,52 +1,58 @@
-import React,{useState} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Signup = () => {
   return (
-    <div className='bg-gray-100 font-space'>
-        <div className="bg-[url('/LoginSignupBg.jpg')] h-[150px] flex flex-col gap-4 items-center justify-center">
+    <div className="bg-gray-100 font-space">
+      <div className="bg-[url('/LoginSignupBg.jpg')] h-[150px] flex flex-col gap-4 items-center justify-center">
         <div className="text-center text-white text-4xl font-bold">Sign up</div>
-        <div className="text-center"><span className="text-[#3f3eed] text-base font-normal">Home </span><span className="text-white text-base font-normal">/ Signup</span></div>
+        <div className="text-center">
+          <span className="text-[#3f3eed] text-base font-normal">Home </span>
+          <span className="text-white text-base font-normal">/ Signup</span>
         </div>
-        <SignupForm/>
+      </div>
+      <SignupForm />
     </div>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
 
 // SignUpform code
 const SignupForm = () => {
-        const [agree, setAgree] = useState(false);
-        const [showPassword, setShowPassword] = useState(false);
+  const [agree, setAgree] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-        const togglePasswordVisibility = () => {
-          setShowPassword(!showPassword);
-        };
-      
-        const handleGoogleSignIn = () => {
-          console.log("Google Sign-In clicked");
-        };
-      
-        const handleLogin = (e) => {
-          e.preventDefault();
-          if (!agree) {
-            alert("You must agree to the terms and conditions");
-            return;
-          }
-          console.log("Login form submitted");
-        };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleGoogleSignIn = () => {
+    console.log("Google Sign-In clicked");
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (!agree) {
+      alert("You must agree to the terms and conditions");
+      return;
+    }
+    console.log("Login form submitted");
+  };
 
   return (
     <div className="flex items-center justify-center w-full">
       <div className="p-6 w-[50vw] max-[1000px]:w-[100vw]">
-      <div className="text-center text-[#3f3eed] text-lg font-bold leading-snug">Start your Journey</div>
-        <h2 className="text-3xl font-bold text-center mb-10">Signup to continue</h2>
+        <div className="text-center text-[#3f3eed] text-lg font-bold leading-snug">
+          Start your Journey
+        </div>
+        <h2 className="text-3xl font-bold text-center mb-10">
+          Signup to continue
+        </h2>
         <form onSubmit={handleLogin}>
-            {/* Name Input */}
-            <div className="mb-4">
+          {/* Name Input */}
+          <div className="mb-4">
             <label className="block text-[#11142d] text-md font-bold mb-2">
               Full Name
             </label>
@@ -75,28 +81,30 @@ const SignupForm = () => {
             <label className="block text-[#11142d] text-sm font-bold mb-2">
               Password
             </label>
-          <div className='relative'>
-          <input
-            //   type="password"
-            type={showPassword ? 'text' : 'password'}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#3F3EED]"
-              placeholder="Enter your password"
-              required
-            />
-        {/* Toggle Button */}
-        <button
-          type="button"
-          onClick={togglePasswordVisibility}
-          className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
-        >
-        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-        </button>
-        </div>
-        </div>
+            <div className="relative">
+              <input
+                //   type="password"
+                type={showPassword ? "text" : "password"}
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#3F3EED]"
+                placeholder="Enter your password"
+                required
+              />
+              {/* Toggle Button */}
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+              >
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+              </button>
+            </div>
+          </div>
 
-          <div className="text-right text-[#557593] text-sm font-bold mb-3">Forgot password?</div>
-                    {/* Checkbox for Terms and Conditions */}
-            <div className="mb-8 flex items-center">
+          <div className="text-right text-[#557593] text-sm font-bold mb-3">
+            Forgot password?
+          </div>
+          {/* Checkbox for Terms and Conditions */}
+          <div className="mb-8 flex items-center">
             <input
               type="checkbox"
               id="terms"
@@ -104,10 +112,11 @@ const SignupForm = () => {
               checked={agree}
               onChange={() => setAgree(!agree)}
             />
-            <label htmlFor="terms" className="text-[#557593] text-sm font-light">
-              I agree to the
-            terms and conditions
-              of services.
+            <label
+              htmlFor="terms"
+              className="text-[#557593] text-sm font-light"
+            >
+              I agree to the terms and conditions of services.
             </label>
           </div>
 
@@ -122,7 +131,13 @@ const SignupForm = () => {
           </div>
         </form>
 
-        <div className="text-[#557593] text-base font-normal leading-tight tracking-tight text-center mt-8">Already have an account?<a href='/login' className='text-[#3F3EED]'> Sign in now</a></div>
+        <div className="text-[#557593] text-base font-normal leading-tight tracking-tight text-center mt-8">
+          Already have an account?
+          <a href="/login" className="text-[#3F3EED]">
+            {" "}
+            Sign in now
+          </a>
+        </div>
         {/* Divider */}
         <div className="text-center text-gray-500 my-8">or</div>
 
@@ -163,4 +178,3 @@ const SignupForm = () => {
     </div>
   );
 };
-

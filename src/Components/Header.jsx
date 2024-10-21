@@ -36,13 +36,12 @@
 
 // export default Header
 
-import React, { useState } from 'react';
-import { useNavigate,useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -61,12 +60,21 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="gap-16 hidden md:flex max-[1000px]:gap-4">
-            <a href="/" className="hover:text-[#3F3EED]">Home</a>
-            <a href="/coming" className="hover:text-[#3F3EED]">Features</a>
-            <a href="/coming" className="hover:text-[#3F3EED]">About Us</a>
-            <a href="/coming" className="hover:text-[#3F3EED]">FAQ's</a>
-            <a href="/coming" className="hover:text-[#3F3EED]">Contact</a>
-
+            <a href="/" className="hover:text-[#3F3EED]">
+              Home
+            </a>
+            <a href="/coming" className="hover:text-[#3F3EED]">
+              Features
+            </a>
+            <a href="/coming" className="hover:text-[#3F3EED]">
+              About Us
+            </a>
+            <a href="/coming" className="hover:text-[#3F3EED]">
+              FAQ's
+            </a>
+            <a href="/coming" className="hover:text-[#3F3EED]">
+              Contact
+            </a>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -85,15 +93,25 @@ const Header = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d={isMobileMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'}
+                d={
+                  isMobileMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16m-7 6h7"
+                }
               />
             </svg>
           </button>
 
           <div className="items-center gap-6 hidden md:flex">
-            <a href="/login" className="hover:text-[#3F3EED]">Sign In</a>
-            <button className="bg-[#D9D9D90F] text-white px-6 py-2 rounded-full"
-            onClick={()=>{navigate('/dashboard')}}>
+            <a href="/login" className="hover:text-[#3F3EED]">
+              Sign In
+            </a>
+            <button
+              className="bg-[#D9D9D90F] text-white px-6 py-2 rounded-full"
+              onClick={() => {
+                navigate("/dashboard");
+              }}
+            >
               Dashboard
             </button>
           </div>
@@ -102,13 +120,30 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <nav className="md:hidden bg-[#151f39] py-4 px-4">
-            <a href="/" className="block py-2 hover:text-[#3F3EED]">Home</a>
-            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">Features</a>
-            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">About Us</a>
-            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">FAQ's</a>
-            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">Contact</a>
-            <a href="/login" className="block py-2 hover:text-[#3F3EED]">Sign In</a>
-            <button className="bg-[#D9D9D90F] text-white w-full px-6 py-2 mt-2 rounded-full" onClick={()=>{navigate('/dashboard')}}>
+            <a href="/" className="block py-2 hover:text-[#3F3EED]">
+              Home
+            </a>
+            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">
+              Features
+            </a>
+            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">
+              About Us
+            </a>
+            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">
+              FAQ's
+            </a>
+            <a href="/coming" className="block py-2 hover:text-[#3F3EED]">
+              Contact
+            </a>
+            <a href="/login" className="block py-2 hover:text-[#3F3EED]">
+              Sign In
+            </a>
+            <button
+              className="bg-[#D9D9D90F] text-white w-full px-6 py-2 mt-2 rounded-full"
+              onClick={() => {
+                navigate("/dashboard");
+              }}
+            >
               Dashboard
             </button>
           </nav>

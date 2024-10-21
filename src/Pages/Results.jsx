@@ -166,7 +166,6 @@ const Results = () => {
             onNewChat={handleNewChat}
             onDeleteChat={handleDeleteChat}
           />
-
           <main className="w-full mx-auto p-4 flex flex-col gap-4 font-space">
             <div className="flex flex-col items-center p-4">
               {/* Toggle Button */}
