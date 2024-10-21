@@ -95,13 +95,12 @@ const ComingSoon = () => {
             <li>📱 Feature 4: Mobile-friendly access across devices.</li>
           </ul>
         </div>
-
         {/* Social Media Links (Optional) */}
-        <div className="mt-8 space-x-4">
+        {/* <div className="mt-8 space-x-4">
           <a href="#" className="text-gray-400 hover:text-white">Twitter</a>
           <a href="#" className="text-gray-400 hover:text-white">Facebook</a>
           <a href="#" className="text-gray-400 hover:text-white">LinkedIn</a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

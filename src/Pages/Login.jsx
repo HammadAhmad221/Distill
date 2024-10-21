@@ -38,7 +38,6 @@ const LoginForm = () => {
           }
           console.log("Login form submitted");
         };
-
   return (
     <div className="flex items-center justify-center w-full">
       <div className="p-6 w-[50vw] max-[1000px]:w-[100vw]">
@@ -57,14 +56,13 @@ const LoginForm = () => {
               required
             />
           </div>
-
           {/* Password Input */}
           <div className="mb-6">
             <label className="block text-[#11142d] text-sm font-bold mb-2">
               Password
             </label>
-<div className='relative'>
-<input
+          <div className='relative'>
+          <input
             //   type="password"
             type={showPassword ? 'text' : 'password'}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#3F3EED]"
@@ -79,9 +77,8 @@ const LoginForm = () => {
         >
         <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
         </button>
-</div>
+        </div>
           </div>
-
           <div className="text-right text-[#557593] text-sm font-bold mb-3">Forgot password?</div>
                     {/* Checkbox for Terms and Conditions */}
             <div className="mb-8 flex items-center">
@@ -109,11 +106,9 @@ const LoginForm = () => {
             </button>
           </div>
         </form>
-
         <div className="text-[#557593] text-base font-normal leading-tight tracking-tight text-center mt-8">Doesn’t have an account?<a href='/signup' className='text-[#3F3EED]'> Sign up now</a></div>
         {/* Divider */}
         <div className="text-center text-gray-500 my-8">or</div>
-
         {/* Google Sign-In Button */}
         <div>
           <button

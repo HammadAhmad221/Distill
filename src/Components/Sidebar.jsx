@@ -39,11 +39,7 @@ const ChatSidebar = ({ chats, onSelectChat, onNewChat, onDeleteChat }) => {
           <FaPlus className="text-lg" />
           <span onClick={onNewChat}>New Chat</span>
         </div> */}
-
       </nav>
-
-
-
       {/* Logout Button */}
       <div className="p-2 ">
         <button className="flex items-center space-x-2 w-full p-2 rounded-md hover:bg-gray-700">

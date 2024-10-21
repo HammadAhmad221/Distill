@@ -66,6 +66,7 @@ const Header = () => {
             <a href="/coming" className="hover:text-[#3F3EED]">About Us</a>
             <a href="/coming" className="hover:text-[#3F3EED]">FAQ's</a>
             <a href="/coming" className="hover:text-[#3F3EED]">Contact</a>
+
           </nav>
 
           {/* Mobile Menu Toggle */}
