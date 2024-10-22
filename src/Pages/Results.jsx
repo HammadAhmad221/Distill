@@ -1,93 +1,3 @@
-// import React, { useState } from 'react';
-// import Sidebar from '../Components/Sidebar';
-// import Navbar from '../Components/navbar';
-// import FileUpload from '../Components/FileUpload';
-// import AudioPlayer from '../Components/AudioPlayer';
-
-// const Results = () => {
-//   const [isSummary, setIsSummary] = useState(true);
-//   const [chats, setChats] = useState([
-//     { name: 'Chat with John' },
-//     { name: 'Project Discussion' },
-//     { name: 'AI Bot Conversation' },
-//     { name: 'Customer Support' },
-//   ]);
-//   const audioFile = "/file_example_MP3_700KB.mp3";
-
-//   const handleSelectChat = (index) => {
-//     console.log(`Selected chat: ${chats[index].name}`);
-//   };
-
-//   const handleNewChat = () => {
-//     const newChat = { name: `New Chat ${chats.length + 1}` };
-//     setChats([...chats, newChat]);
-//   };
-
-//   const handleDeleteChat = (index) => {
-//     const updatedChats = chats.filter((_, i) => i !== index);
-//     setChats(updatedChats);
-//   };
-
-//   const handleToggle = () => {
-//   setIsSummary(!isSummary);
-//   };
-
-//   return (
-// <>
-// {/* Main Content */}
-// <div className="">
-//   <Navbar />
-//   {/* Content Section */}
-//   <main className=" flex">
-// <Sidebar
-//         chats={chats}
-//         onSelectChat={handleSelectChat}
-//         onNewChat={handleNewChat}
-//         onDeleteChat={handleDeleteChat}
-//       />
-
-// <main className='w-full mx-auto p-4 flex flex-col gap-4 font-space'>
-
-//     <div className="flex flex-col items-center p-4">
-//       {/* Toggle Button */}
-//       <div className="flex mb-4 p-2 shadow-lg rounded-full">
-//         <button
-//           onClick={handleToggle}
-//           className={`px-4 py-2 rounded-full flex gap-2 items-center ${isSummary ? 'bg-[#3F3EED] text-white' : 'bg-white text-[#3F3EED]'}`}
-//         >
-//           Summary
-//         </button>
-//         <button
-//           onClick={handleToggle}
-//           className={`px-4 py-2 w-[127.40px] rounded-full flex gap-2 items-center justify-center ${!isSummary ? 'bg-[#3F3EED] text-white' : 'bg-white text-[#3F3EED]'}`}
-//         >
-//           Transcript
-//         </button>
-//       </div>
-//       <div className='w-[55%]'>
-//         <AudioPlayer audioSrc={audioFile}/>
-//       </div>
-//     {/* Conditional Input Fields */}
-//     </div>
-// { isSummary ? (<div className='w-[85%] mx-auto'>
-//     <div className='bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6'>
-//       <div className="text-[#3f3eed] text-base font-semibold">Summary</div>
-//       <img src="/dropdownarrow.svg" alt="▽" />
-//   </div>
-// </div>  ):(
-// <div className=''>
-
-// </div>
-// )}
-// </main>
-//   </main>
-// </div>
-//     </>
-//   );
-// };
-
-// export default Results;
-
 import React, { useState, useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import Navbar from "../Components/Navbar";
@@ -96,7 +6,6 @@ import axios from "axios";
 
 const Results = () => {
   const [isSummary, setIsSummary] = useState(true);
-  //   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [summarization, setSummarization] = useState("");
   const [dropdownStates, setDropdownStates] = useState({
     summary: false,
@@ -120,7 +29,7 @@ const Results = () => {
         transcript_text: localStorage.getItem("transcript"),
       });
       setSummarization(response.data);
-      console.log("Summarization", response.data);
+      // console.log("Summarization", response.data);
     }
     fetchData();
   }, []);
@@ -142,10 +51,6 @@ const Results = () => {
   const handleToggle = () => {
     setIsSummary(!isSummary);
   };
-
-  //   const handleDropdownToggle = () => {
-  //     setIsDropdownOpen(!isDropdownOpen);
-  //   };
   const handleDropdownToggle = (section) => {
     setDropdownStates((prevState) => ({
       ...prevState,
@@ -199,20 +104,6 @@ const Results = () => {
 
             {isSummary ? (
               <div className="w-[85%] mx-auto text-sm">
-                {/* <div 
-                  className='bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6 cursor-pointer' 
-                  onClick={handleDropdownToggle} // Toggle dropdown content on click
-                >
-                  <div className="text-[#3f3eed] text-base font-semibold">Summary</div>
-                  <img 
-                    src="/dropdownarrow.svg" 
-                    alt="▽" 
-                    className={`transform transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} // Rotate arrow on open
-                  />
-                </div> */}
-
-                {/* Dropdowns Section */}
-                {/* <div className='w-[85%] mx-auto'>   */}
                 {/* Summary Dropdown */}
                 <div
                   className="bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6 cursor-pointer"
@@ -232,9 +123,11 @@ const Results = () => {
                 {dropdownStates.summary && (
                   <div className="mt-4 px-6">
                     <div className="text-black text-base font-normal">
-                      {localStorage.getItem("transcript") ? (
-                        <p>{localStorage.getItem("transcript")}</p>
-                      ) : (
+                      {summarization ? (
+<>
+<strong>{summarization?.Topic}</strong>
+<p>{summarization?.Summarize}</p>
+</>                      ) : (
                         <>
                           <strong>Martin Luther</strong>
                           <p>
@@ -374,28 +267,18 @@ const Results = () => {
                     </div>
                   </div>
                 )}
-                {/* </div> */}
-
-                {/* Dropdown Content */}
-                {/* {isDropdownOpen && (
-                  <div className="mt-4 px-6">
-                    <div className="text-black text-base font-normal">
-                      Hey, everyone. Gary. Simon. Of course. So today we're going to continue on with the theme that I've been keeping up in the channel the last week or so with UI design and prototyping tools overviews...
-                    </div>
-                  </div>
-                )} */}
               </div>
             ) : (
               <div className="w-[85%] mx-auto flex flex-col items-center gap-2">
                 {/* Content for Transcript */}
                 {summarization ? (
                   <>
-                    <strong>{summarization?.Topic}</strong>
-                    <p>{summarization?.Summarize}</p>
+                    {/* <strong>{summarization?.Topic}</strong> */}
+                    <p>{localStorage.getItem("transcript")}</p>
                   </>
                 ) : (
                   <>
-                    <div className="">
+                    <div>
                       <strong>Martin Luther</strong>
                       <p>
                         Hey, everyone. Gary. Simon. Of course. So today we're
@@ -431,7 +314,7 @@ const Results = () => {
                         have to say Figma is the one tool that I think most of
                         you have requested more than any other tool. So that's
                         for good reason. It's 100% free for an individual, and
-                        also it's 100% web based.{" "}
+                        also it's 100% web based.
                       </p>
                     </div>
                     <div>
@@ -446,7 +329,7 @@ const Results = () => {
                         have to say Figma is the one tool that I think most of
                         you have requested more than any other tool. So that's
                         for good reason. It's 100% free for an individual, and
-                        also it's 100% web based.{" "}
+                        also it's 100% web based.
                       </p>
                     </div>
                     <div>
@@ -461,7 +344,7 @@ const Results = () => {
                         have to say Figma is the one tool that I think most of
                         you have requested more than any other tool. So that's
                         for good reason. It's 100% free for an individual, and
-                        also it's 100% web based.{" "}
+                        also it's 100% web based.
                       </p>
                     </div>
                   </>

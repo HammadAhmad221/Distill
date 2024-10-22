@@ -134,7 +134,6 @@ const SignupForm = () => {
         <div className="text-[#557593] text-base font-normal leading-tight tracking-tight text-center mt-8">
           Already have an account?
           <a href="/login" className="text-[#3F3EED]">
-            {" "}
             Sign in now
           </a>
         </div>

@@ -1,13 +1,3 @@
-// import React from 'react'
-
-// const Navbar = () => {
-//   return (
-//     <div>Navbar</div>
-//   )
-// }
-
-// export default Navbar
-
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
