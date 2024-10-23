@@ -14,6 +14,7 @@ const App = () => {
     { name: "AI Bot Conversation" },
     { name: "Customer Support" },
   ]);
+  const [url, setUrl] = useState('');
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0); // State for upload progress
   const [uploadedFileName, setUploadedFileName] = useState("audio.mp3"); // State for file name
@@ -25,7 +26,7 @@ const App = () => {
     localStorage.setItem("audio-url", url);
   };
 
-  const handleGenerate = async () => {
+  const handleAudioGenerate = async () => {
     if (!file) {
       alert("Please upload a file first.");
       return;
@@ -38,7 +39,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        "http://16.171.144.18/audio_transcript",
+        "http://51.20.108.234/audio_transcript",
         formData,
         {
           headers: {
@@ -58,6 +59,35 @@ const App = () => {
     } catch (error) {
       console.error("Error generating transcription:", error);
       alert("An error occurred while generating the transcription.");
+    }
+  };
+
+  const handleVideoGenerate = async () => {
+    if (!url) {
+      alert("Please paste a URL first.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("video_url", url); // Assuming your backend expects a field named 'url'
+
+    try {
+      const response = await axios.post(
+        "http://51.20.108.234/transcript", // Update the URL if needed
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+console.log(response.data);
+      // Store the response data (like transcript text) if needed
+      localStorage.setItem("transcript", response.data.transcript_text);
+      navigate("/results");
+    } catch (error) {
+      console.error("Error generating transcript:", error);
+      alert("An error occurred while generating the transcript.");
     }
   };
 
@@ -182,7 +212,7 @@ const App = () => {
                   Cancel
                 </button>
                 <button
-                  onClick={handleGenerate}
+                  onClick={handleAudioGenerate}
                   className="bg-[#3F3EED] text-white px-4 py-2 rounded-lg flex items-center gap-2"
                 >
                   <img src="/magic.svg" alt="m" />
@@ -191,28 +221,52 @@ const App = () => {
               </div>
             </div>
           ) : (
+            // <div className="w-[80%] mx-auto flex flex-col gap-4">
+            //   <div className="bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6">
+            //     <div className="text-black text-base">
+            //       Automatic language detection
+            //     </div>
+            //     <img src="/dropdownarrow.svg" alt="▽" />
+            //   </div>
+            //   <div className="flex flex-wrap w-full gap-4">
+            //     <input
+            //       type="text"
+            //       placeholder="Paste your URL here.."
+            //       className="border rounded-lg p-2 flex-1"
+            //     />
+            //     <button
+            //       onClick={() => navigate("/results")}
+            //       className="bg-[#3F3EED] text-white px-4 py-2 rounded-lg flex items-center gap-2"
+            //     >
+            //       <img src="/magic.svg" alt="m" />
+            //       Generate
+            //     </button>
+            //   </div>
+            // </div>
             <div className="w-[80%] mx-auto flex flex-col gap-4">
-              <div className="bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6">
-                <div className="text-black text-base">
-                  Automatic language detection
-                </div>
-                <img src="/dropdownarrow.svg" alt="▽" />
+            <div className="bg-gray-100 rounded-lg flex items-center justify-between py-2 px-6">
+              <div className="text-black text-base">
+                Automatic language detection
               </div>
-              <div className="flex flex-wrap w-full gap-4">
-                <input
-                  type="text"
-                  placeholder="Paste your URL here.."
-                  className="border rounded-lg p-2 flex-1"
-                />
-                <button
-                  onClick={() => navigate("/results")}
-                  className="bg-[#3F3EED] text-white px-4 py-2 rounded-lg flex items-center gap-2"
-                >
-                  <img src="/magic.svg" alt="m" />
-                  Generate
-                </button>
-              </div>
+              <img src="/dropdownarrow.svg" alt="▽" />
             </div>
+            <div className="flex flex-wrap w-full gap-4">
+              <input
+                type="text"
+                placeholder="Paste your URL here.."
+                className="border rounded-lg p-2 flex-1"
+                value={url} // Bind input value to state
+                onChange={(e) => setUrl(e.target.value)} // Update state on change
+              />
+              <button
+                onClick={handleVideoGenerate} // Call your new function on button click
+                className="bg-[#3F3EED] text-white px-4 py-2 rounded-lg flex items-center gap-2"
+              >
+                <img src="/magic.svg" alt="m" />
+                Generate
+              </button>
+            </div>
+          </div>
           )}
         </main>
       </main>

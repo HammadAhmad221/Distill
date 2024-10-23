@@ -25,7 +25,7 @@ const Results = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.post("http://16.171.144.18/summarization", {
+      const response = await axios.post("http://51.20.108.234/summarization", {
         transcript_text: localStorage.getItem("transcript"),
       });
       setSummarization(response.data);
@@ -96,9 +96,9 @@ const Results = () => {
                   Transcript
                 </button>
               </div>
-              <div className="w-[75%]">
+{  audioFile && <div className="w-[75%]">
                 <AudioPlayer audioSrc={audioFile} />
-              </div>
+              </div>}
               {/* Conditional Input Fields */}
             </div>
 
@@ -124,10 +124,11 @@ const Results = () => {
                   <div className="mt-4 px-6">
                     <div className="text-black text-base font-normal">
                       {summarization ? (
-<>
-<strong>{summarization?.Topic}</strong>
-<p>{summarization?.Summarize}</p>
-</>                      ) : (
+                        <>
+                          <strong>{summarization?.Topic}</strong>
+                          <p>{summarization?.Summarize}</p>
+                        </>
+                      ) : (
                         <>
                           <strong>Martin Luther</strong>
                           <p>
