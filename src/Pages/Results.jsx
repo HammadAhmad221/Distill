@@ -3,6 +3,7 @@ import Sidebar from "../Components/Sidebar";
 import Navbar from "../Components/Navbar";
 import AudioPlayer from "../Components/AudioPlayer";
 import axios from "axios";
+import Loading from "../Components/Loading";
 
 const Results = () => {
   const [isSummary, setIsSummary] = useState(true);
@@ -29,7 +30,7 @@ const Results = () => {
         transcript_text: localStorage.getItem("transcript"),
       });
       setSummarization(response.data);
-      // console.log("Summarization", response.data);
+      console.log("Summarization", response.data);
     }
     fetchData();
   }, []);
@@ -125,50 +126,51 @@ const Results = () => {
                     <div className="text-black text-base font-normal">
                       {summarization ? (
                         <>
-                          <strong>{summarization?.Topic}</strong>
-                          <p>{summarization?.Summarize}</p>
+                          {/* <strong>{summarization?.Topic}</strong> */}
+                          <p>{summarization?.Summary}</p>
                         </>
                       ) : (
-                        <>
-                          <strong>Martin Luther</strong>
-                          <p>
-                            Hey, everyone. Gary. Simon. Of course. So today
-                            we're going to continue on with the theme that I've
-                            been keeping up in the channel the last week or so
-                            with UI design and prototyping tools overviews. All
-                            right. So just last week we did Gravit designer and
-                            also lunacy. And today we're going to take a look at
-                            Figma. And I have to say Figma is the one tool that
-                            I think most of you have requested more than any
-                            other tool. So that's for good reason. It's 100%
-                            free for an individual, and also it's 100% web
-                            based. It also has prototyping in it, and it also
-                            has a desktop version that you can use on multiple
-                            operating systems, which is made possible through
-                            electron. So I'm going to go ahead and walk you guys
-                            through a quick kind of like a mobile UI design,
-                            just to show as many features as possible, like in a
-                            30 minute video so you can get a well-rounded
-                            understanding of how this tool operates. And I have
-                            to say, it's very similar to Adobe XD, except it's
-                            free and even web based, so that's pretty freaking
-                            awesome.
-                          </p>
-                          <strong>Dreams of American Nero</strong>
-                          <p>
-                            Hey, everyone. Gary. Simon. Of course. So today
-                            we're going to continue on with the theme that I've
-                            been keeping up in the channel the last week or so
-                            with UI design and prototyping tools overviews. All
-                            right. So just last week we did Gravit designer and
-                            also lunacy. And today we're going to take a look at
-                            Figma. And I have to say Figma is the one tool that
-                            I think most of you have requested more than any
-                            other tool. So that's for good reason. It's 100%
-                            free for an individual, and also it's 100% web
-                            based.
-                          </p>
-                        </>
+                        // <>
+                        //   <strong>Martin Luther</strong>
+                        //   <p>
+                        //     Hey, everyone. Gary. Simon. Of course. So today
+                        //     we're going to continue on with the theme that I've
+                        //     been keeping up in the channel the last week or so
+                        //     with UI design and prototyping tools overviews. All
+                        //     right. So just last week we did Gravit designer and
+                        //     also lunacy. And today we're going to take a look at
+                        //     Figma. And I have to say Figma is the one tool that
+                        //     I think most of you have requested more than any
+                        //     other tool. So that's for good reason. It's 100%
+                        //     free for an individual, and also it's 100% web
+                        //     based. It also has prototyping in it, and it also
+                        //     has a desktop version that you can use on multiple
+                        //     operating systems, which is made possible through
+                        //     electron. So I'm going to go ahead and walk you guys
+                        //     through a quick kind of like a mobile UI design,
+                        //     just to show as many features as possible, like in a
+                        //     30 minute video so you can get a well-rounded
+                        //     understanding of how this tool operates. And I have
+                        //     to say, it's very similar to Adobe XD, except it's
+                        //     free and even web based, so that's pretty freaking
+                        //     awesome.
+                        //   </p>
+                        //   <strong>Dreams of American Nero</strong>
+                        //   <p>
+                        //     Hey, everyone. Gary. Simon. Of course. So today
+                        //     we're going to continue on with the theme that I've
+                        //     been keeping up in the channel the last week or so
+                        //     with UI design and prototyping tools overviews. All
+                        //     right. So just last week we did Gravit designer and
+                        //     also lunacy. And today we're going to take a look at
+                        //     Figma. And I have to say Figma is the one tool that
+                        //     I think most of you have requested more than any
+                        //     other tool. So that's for good reason. It's 100%
+                        //     free for an individual, and also it's 100% web
+                        //     based.
+                        //   </p>
+                        // </>
+                        <Loading/>
                       )}
                     </div>
                   </div>
@@ -192,7 +194,7 @@ const Results = () => {
                 {dropdownStates.highlights && (
                   <div className="mt-4 px-6">
                     <div className="text-black text-base font-normal">
-                      <p>Highlight content goes here...</p>
+                      <p>{summarization?.Highlights}</p>
                     </div>
                   </div>
                 )}
@@ -216,7 +218,7 @@ const Results = () => {
                 {dropdownStates.headings && (
                   <div className="mt-4 px-6">
                     <div className="text-black text-base font-normal">
-                      <p>Heading content goes here...</p>
+                      <p>{summarization?.Topic}</p>
                     </div>
                   </div>
                 )}
@@ -240,7 +242,7 @@ const Results = () => {
                 {dropdownStates.keyPoints && (
                   <div className="mt-4 px-6">
                     <div className="text-black text-base font-normal">
-                      <p>Key points content goes here...</p>
+                      <p>key points goes here .......</p>
                     </div>
                   </div>
                 )}
@@ -278,77 +280,78 @@ const Results = () => {
                     <p>{localStorage.getItem("transcript")}</p>
                   </>
                 ) : (
-                  <>
-                    <div>
-                      <strong>Martin Luther</strong>
-                      <p>
-                        Hey, everyone. Gary. Simon. Of course. So today we're
-                        going to continue on with the theme that I've been
-                        keeping up in the channel the last week or so with UI
-                        design and prototyping tools overviews. All right. So
-                        just last week we did Gravit designer and also lunacy.
-                        And today we're going to take a look at Figma. And I
-                        have to say Figma is the one tool that I think most of
-                        you have requested more than any other tool. So that's
-                        for good reason. It's 100% free for an individual, and
-                        also it's 100% web based. It also has prototyping in it,
-                        and it also has a desktop version that you can use on
-                        multiple operating systems, which is made possible
-                        through electron. So I'm going to go ahead and walk you
-                        guys through a quick kind of like a mobile UI design,
-                        just to show as many features as possible, like in a 30
-                        minute video so you can get a well-rounded understanding
-                        of how this tool operates. And I have to say, it's very
-                        similar to Adobe XD, except it's free and even web
-                        based, so that's pretty freaking awesome.
-                      </p>
-                    </div>
-                    <div>
-                      <strong>Dreams of American Nero</strong>
-                      <p>
-                        Hey, everyone. Gary. Simon. Of course. So today we're
-                        going to continue on with the theme that I've been
-                        keeping up in the channel the last week or so with UI
-                        design and prototyping tools overviews. All right. So
-                        just last week we did Gravit designer and also lunacy.
-                        And today we're going to take a look at Figma. And I
-                        have to say Figma is the one tool that I think most of
-                        you have requested more than any other tool. So that's
-                        for good reason. It's 100% free for an individual, and
-                        also it's 100% web based.
-                      </p>
-                    </div>
-                    <div>
-                      <strong>Dreams of American Nero</strong>
-                      <p>
-                        Hey, everyone. Gary. Simon. Of course. So today we're
-                        going to continue on with the theme that I've been
-                        keeping up in the channel the last week or so with UI
-                        design and prototyping tools overviews. All right. So
-                        just last week we did Gravit designer and also lunacy.
-                        And today we're going to take a look at Figma. And I
-                        have to say Figma is the one tool that I think most of
-                        you have requested more than any other tool. So that's
-                        for good reason. It's 100% free for an individual, and
-                        also it's 100% web based.
-                      </p>
-                    </div>
-                    <div>
-                      <strong>Dreams of American Nero</strong>
-                      <p>
-                        Hey, everyone. Gary. Simon. Of course. So today we're
-                        going to continue on with the theme that I've been
-                        keeping up in the channel the last week or so with UI
-                        design and prototyping tools overviews. All right. So
-                        just last week we did Gravit designer and also lunacy.
-                        And today we're going to take a look at Figma. And I
-                        have to say Figma is the one tool that I think most of
-                        you have requested more than any other tool. So that's
-                        for good reason. It's 100% free for an individual, and
-                        also it's 100% web based.
-                      </p>
-                    </div>
-                  </>
+                  // <>
+                  //   <div>
+                  //     <strong>Martin Luther</strong>
+                  //     <p>
+                  //       Hey, everyone. Gary. Simon. Of course. So today we're
+                  //       going to continue on with the theme that I've been
+                  //       keeping up in the channel the last week or so with UI
+                  //       design and prototyping tools overviews. All right. So
+                  //       just last week we did Gravit designer and also lunacy.
+                  //       And today we're going to take a look at Figma. And I
+                  //       have to say Figma is the one tool that I think most of
+                  //       you have requested more than any other tool. So that's
+                  //       for good reason. It's 100% free for an individual, and
+                  //       also it's 100% web based. It also has prototyping in it,
+                  //       and it also has a desktop version that you can use on
+                  //       multiple operating systems, which is made possible
+                  //       through electron. So I'm going to go ahead and walk you
+                  //       guys through a quick kind of like a mobile UI design,
+                  //       just to show as many features as possible, like in a 30
+                  //       minute video so you can get a well-rounded understanding
+                  //       of how this tool operates. And I have to say, it's very
+                  //       similar to Adobe XD, except it's free and even web
+                  //       based, so that's pretty freaking awesome.
+                  //     </p>
+                  //   </div>
+                  //   <div>
+                  //     <strong>Dreams of American Nero</strong>
+                  //     <p>
+                  //       Hey, everyone. Gary. Simon. Of course. So today we're
+                  //       going to continue on with the theme that I've been
+                  //       keeping up in the channel the last week or so with UI
+                  //       design and prototyping tools overviews. All right. So
+                  //       just last week we did Gravit designer and also lunacy.
+                  //       And today we're going to take a look at Figma. And I
+                  //       have to say Figma is the one tool that I think most of
+                  //       you have requested more than any other tool. So that's
+                  //       for good reason. It's 100% free for an individual, and
+                  //       also it's 100% web based.
+                  //     </p>
+                  //   </div>
+                  //   <div>
+                  //     <strong>Dreams of American Nero</strong>
+                  //     <p>
+                  //       Hey, everyone. Gary. Simon. Of course. So today we're
+                  //       going to continue on with the theme that I've been
+                  //       keeping up in the channel the last week or so with UI
+                  //       design and prototyping tools overviews. All right. So
+                  //       just last week we did Gravit designer and also lunacy.
+                  //       And today we're going to take a look at Figma. And I
+                  //       have to say Figma is the one tool that I think most of
+                  //       you have requested more than any other tool. So that's
+                  //       for good reason. It's 100% free for an individual, and
+                  //       also it's 100% web based.
+                  //     </p>
+                  //   </div>
+                  //   <div>
+                  //     <strong>Dreams of American Nero</strong>
+                  //     <p>
+                  //       Hey, everyone. Gary. Simon. Of course. So today we're
+                  //       going to continue on with the theme that I've been
+                  //       keeping up in the channel the last week or so with UI
+                  //       design and prototyping tools overviews. All right. So
+                  //       just last week we did Gravit designer and also lunacy.
+                  //       And today we're going to take a look at Figma. And I
+                  //       have to say Figma is the one tool that I think most of
+                  //       you have requested more than any other tool. So that's
+                  //       for good reason. It's 100% free for an individual, and
+                  //       also it's 100% web based.
+                  //     </p>
+                  //   </div>
+                  // </>
+                  <Loading/>
                 )}
               </div>
             )}

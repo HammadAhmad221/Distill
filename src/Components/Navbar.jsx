@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 import {
   faSearch,
   faBell,
@@ -10,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,7 +23,7 @@ const Navbar = () => {
       {/* Logo Section */}
       <div className="w-8 h-8 flex items-center gap-2">
         <img src="/Clip.svg" alt="Distill Audio Logo" />
-        <div className="text-sm font-bold whitespace-nowrap">Distill Audio</div>
+        <div className="text-sm font-bold whitespace-nowrap cursor-pointer" onClick={()=> navigate('/')}>Distill Audio</div>
       </div>
 
       {/* Buttons and Icons */}
